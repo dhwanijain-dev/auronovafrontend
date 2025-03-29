@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(dark *));
+*
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  /* White background */
+  --foreground: #000000;
+  /* Black text */
+  --card: #f4f4f9;
+  /* Light grey card background */
+  --card-foreground: #000000;
+  /* Black text on cards */
+  --popover: #ffffff;
+  /* White popover background */
+  --popover-foreground: #000000;
+  /* Black text on popovers */
+  --primary: #333333;
+  /* Dark grey primary color */
+  --primary-foreground: #ffffff;
+  /* White text on primary elements */
+  --secondary: #cccccc;
+  /* Light grey secondary color */
+  --secondary-foreground: #000000;
+  /* Black text on secondary elements */
+  --muted: #eaeaea;
+  /* Very light grey muted color */
+  --muted-foreground: #666666;
+  /* Dark grey text on muted elements */
+  --accent: #999999;
+  /* Medium grey accent color */
+  --accent-foreground: #000000;
+  /* Black text on accent elements */
+  --destructive: #ff0000;
+  /* Red destructive color */
+  --border: #dddddd;
+  /* Light grey border color */
+  --input: #f4f4f9;
+  /* Light grey input background */
+  --ring: #cccccc;
+  /* Light grey ring color */
+  --chart-1: #333333;
+  /* Dark grey chart color */
+  --chart-2: #666666;
+  /* Medium grey chart color */
+  --chart-3: #999999;
+  /* Light grey chart color */
+  --chart-4: #cccccc;
+  /* Very light grey chart color */
+  --chart-5: #eaeaea;
+  /* Almost white chart color */
+  --sidebar: #f4f4f9;
+  /* Light grey sidebar background */
+  --sidebar-foreground: #000000;
+  /* Black text on sidebar */
+  --sidebar-primary: #333333;
+  /* Dark grey primary sidebar color */
+  --sidebar-primary-foreground: #ffffff;
+  /* White text on primary sidebar elements */
+  --sidebar-accent: #999999;
+  /* Medium grey accent sidebar color */
+  --sidebar-accent-foreground: #000000;
+  /* Black text on accent sidebar elements */
+  --sidebar-border: #dddddd;
+  /* Light grey sidebar border color */
+  --sidebar-ring: #cccccc;
+  /* Light grey sidebar ring color */
+}
+
+.dark {
+  --background: #121212;
+  /* Dark grey background */
+  --foreground: #ffffff;
+  /* White text */
+  --card: #1e1e1e;
+  /* Dark grey card background */
+  --card-foreground: #ffffff;
+  /* White text on cards */
+  --popover: #1e1e1e;
+  /* Dark grey popover background */
+  --popover-foreground: #ffffff;
+  /* White text on popovers */
+  --primary: #bbbbbb;
+  /* Light grey primary color */
+  --primary-foreground: #000000;
+  /* Black text on primary elements */
+  --secondary: #444444;
+  /* Medium grey secondary color */
+  --secondary-foreground: #ffffff;
+  /* White text on secondary elements */
+  --muted: #333333;
+  /* Dark grey muted color */
+  --muted-foreground: #bbbbbb;
+  /* Light grey text on muted elements */
+  --accent: #444444;
+  /* Medium grey accent color */
+  --accent-foreground: #ffffff;
+  /* White text on accent elements */
+  --destructive: #ff5c5c;
+  /* Light red destructive color */
+  --border: #444444;
+  /* Medium grey border color */
+  --input: #2e2e2e;
+  /* Dark grey input background */
+  --ring: #555555;
+  /* Medium grey ring color */
+  --chart-1: #bbbbbb;
+  /* Light grey chart color */
+  --chart-2: #888888;
+  /* Medium grey chart color */
+  --chart-3: #555555;
+  /* Dark grey chart color */
+  --chart-4: #444444;
+  /* Very dark grey chart color */
+  --chart-5: #333333;
+  /* Almost black chart color */
+  --sidebar: #1e1e1e;
+  /* Dark grey sidebar background */
+  --sidebar-foreground: #ffffff;
+  /* White text on sidebar */
+  --sidebar-primary: #bbbbbb;
+  /* Light grey primary sidebar color */
+  --sidebar-primary-foreground: #000000;
+  /* Black text on primary sidebar elements */
+  --sidebar-accent: #444444;
+  /* Medium grey accent sidebar color */
+  --sidebar-accent-foreground: #ffffff;
+  /* White text on accent sidebar elements */
+  --sidebar-border: #444444;
+  /* Medium grey sidebar border color */
+  --sidebar-ring: #555555;
+  /* Medium grey sidebar ring color */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
